@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["Rameez Khan <rameez.rk94@gmail.com>"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.isort]
+combine_as_imports = true
+force_grid_wrap = 0
+include_trailing_comma = true
+line_length = 100
+multi_line_output = 3
+no_lines_before = "LOCALFOLDER"
+order_by_type = false
+
+[tool.vulture]
+min_confidence = 100
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = { version = "^21.4b2", allow-prereleases = true }
+isort = "^5.8.0"
+mypy = "^0.812"
+flake8 = "^3.9.1"
+flake8-print = "^4.0.0"
+pep8-naming = "^0.11.1"
+vulture = "^2.3"
+bandit = "^1.7.0"
+pytest-asyncio = "^0.15.1"
+
+[tool.poetry.scripts]
+format = "scripts:format"
+reformat = "scripts:reformat"
+lint = "scripts:lint"
+test = "scripts:test"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

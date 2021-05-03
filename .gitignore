@@ -1,0 +1,8 @@
+*~
+venv/
+*.pyc
+.vscode/
+.ansible-vault
+secrets.auto.tfvars
+terraform.tfstate
+*.backup
